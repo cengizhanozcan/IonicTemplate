@@ -14,17 +14,24 @@ import { MenuPage } from '../pages/menu/menu';
 import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
 import { SignupPage } from '../pages/signup/signup';
-import { TabsPage } from '../pages/tabs/tabs';
-import { TutorialPage } from '../pages/tutorial/tutorial';
+import { TabsPage } from '../pages/tabs/tabs'; 
 import { WelcomePage } from '../pages/welcome/welcome';
  
 import { TranslateService } from '@ngx-translate/core'
 
 @Component({
-  template: `<ion-menu [content]="content">
+  template: `<ion-menu [content]="content" persistent="true">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Pages</ion-title>
+        <ion-title>{{'MENU_PAGE' || translate}}</ion-title>
+        <ion-buttons right>
+          <button ion-button icon-only (click)="openSettingPage()" menuClose>
+            <ion-icon name="options"></ion-icon>
+          </button>
+          <button ion-button icon-only (click)="logout()">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
 
@@ -44,8 +51,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  pages: any[] = [
-    { title: 'Tutorial', component: TutorialPage },
+  pages: any[] = [ 
     { title: 'Welcome', component: WelcomePage },
     { title: 'Tabs', component: TabsPage },
     { title: 'Cards', component: CardsPage },
@@ -92,4 +98,14 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+  openSettingPage(){
+    this.nav.push(SettingsPage);
+  }
+
+  logout(){
+    this.nav.push(LoginPage);
+    this.nav.setRoot(LoginPage)
+  }
+
 }

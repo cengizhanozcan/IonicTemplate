@@ -31,5 +31,20 @@
   "ITEM_CREATE_TITLE": "Yeni Öğe",
   "ITEM_CREATE_CHOOSE_IMAGE": "Yeni Görsel",
   "CARDS_TITLE": "Sosyal",
-  "SEARCH_TITLE": "Arama"
+  "SEARCH_TITLE": "Arama",
+
+  "":"",
+  "MENU_PAGE": "Menü",
+  "SETTINGS_PAGE": "Ayarlar",
+
+  "BUTTON_SAVE": "Kaydet",
+  "BUTTON_SEARCH": "Ara",
+  "BUTTON_DELETE": "Sil",
+  "BUTTON_YES": "Evet",
+  "BUTTON_NO": "Hayır",
+
+
+  "SETTINGS_URL": "URL"
+
+  
 }

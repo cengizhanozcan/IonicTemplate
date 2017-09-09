@@ -23,6 +23,10 @@ export class SettingsPage {
     public settingsService: SettingsService) {
   }
  
+  ionViewDidLoad() { 
+    this.url = this.settingsService.url;
+  }
+  
   save(){
     if(!this.url){
 
@@ -30,10 +34,6 @@ export class SettingsPage {
     this.settingsService.save(this.url);
   }
 
-  ionViewDidLoad() { 
-    this.url = this.settingsService.url;
-  }
- 
   ngOnChanges() {
     console.log('Ng All Changes');
   }
